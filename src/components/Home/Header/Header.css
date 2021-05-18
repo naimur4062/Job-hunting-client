@@ -1,0 +1,12 @@
+.available-jobs{
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.available-jobs Button{
+    margin: 10px;
+    width: 300px;
+    height: 100px;
+    font-size: 25px;
+    font-weight: 700;
+}

@@ -1,0 +1,21 @@
+.navLink{
+    color:gray;
+    font-weight: 700;
+}
+
+#toggle{
+    background-color: lightgray;
+    border: 2px solid black;
+}
+
+#login-btn{
+    background-color: #ff4880;
+    padding: 5px;
+    color: white;
+    width: 100px;
+    font-weight: 500;
+}
+
+Nav .nav a{
+    text-decoration: none;
+}
