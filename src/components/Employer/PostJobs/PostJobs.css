@@ -1,14 +1,7 @@
 /* .addJob{
     overflow: hidden;
 } */
-.admin-form form{
-    width: 900px;
-    position: relative;
-}
-/* .admin input{
-    width: 380px;
-    height: 30px;
-} */
+
 .admin label{
     font-weight: 700;
 }

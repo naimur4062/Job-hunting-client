@@ -30,8 +30,8 @@ const PostJobs = () => {
             })
     }
     return (
-        <div className="mt-5 addJob">
-            <h3>Add Jobs</h3>
+        <div className="mt-2 addJob">
+            <h3 className="text-center">Add Jobs</h3>
             <div className="admin-form mt-3">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="admin container shadow p-3 mb-3 mt-5 bg-body">

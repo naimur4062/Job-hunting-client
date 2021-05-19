@@ -20,7 +20,7 @@ const Job = ({ job }) => {
                         <h5>Openings: {openings}</h5>
                     </div>
                     <div className="mt-2">
-                    <Link to="/jobs">
+                    <Link to={`/job/${job._id}`}>
                             Apply Now
                     </Link>
                     </div>

@@ -1,69 +1,21 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import Job from '../Job/Job';
 
-const jobs = [
-    {
-        title: 'Front-end-developer',
-        type: 'Remote',
-        city: 'Kushtia',
-        openings: 10,
-        skills: 'HTML, CSS, React, Node js, Firebase, MongoDB',
-        ctc: '29,0000',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, expedita vitae sequi nobis unde minus nostrum facilis incidunt reprehenderit tempora.'
-    },
-    {
-        title: 'Front-end-developer',
-        type: 'Remote',
-        city: 'Kushtia',
-        openings: 10,
-        skills: 'HTML, CSS, React, Node js, Firebase, MongoDB',
-        ctc: '29,0000',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, expedita vitae sequi nobis unde minus nostrum facilis incidunt reprehenderit tempora.'
-    },
-    {
-        title: 'Front-end-developer',
-        type: 'Remote',
-        city: 'Kushtia',
-        openings: 10,
-        skills: 'HTML, CSS, React, Node js, Firebase, MongoDB',
-        ctc: '29,0000',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, expedita vitae sequi nobis unde minus nostrum facilis incidunt reprehenderit tempora.'
-    },
-    {
-        title: 'Front-end-developer',
-        type: 'Remote',
-        city: 'Kushtia',
-        openings: 10,
-        skills: 'HTML, CSS, React, Node js, Firebase, MongoDB',
-        ctc: '29,0000',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, expedita vitae sequi nobis unde minus nostrum facilis incidunt reprehenderit tempora.'
-    },
-    {
-        title: 'Front-end-developer',
-        type: 'Remote',
-        city: 'Kushtia',
-        openings: 10,
-        skills: 'HTML, CSS, React, Node js, Firebase, MongoDB',
-        ctc: '29,0000',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, expedita vitae sequi nobis unde minus nostrum facilis incidunt reprehenderit tempora.'
-    },
-    {
-        title: 'Front-end-developer',
-        type: 'Remote',
-        city: 'Kushtia',
-        openings: 10,
-        skills: 'HTML, CSS, React, Node js, Firebase, MongoDB',
-        ctc: '29,0000',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, expedita vitae sequi nobis unde minus nostrum facilis incidunt reprehenderit tempora.'
-    },
-]
-
 const Jobs = () => {
+    const [jobs, setJobs] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/jobs')
+        .then(res => res.json())
+        .then(data => setJobs(data))
+    }, [jobs])
+
     return (
         <div className="row container-fluid">
-            <h1 className="text-center my-4 text-secondary">Available Jobs</h1>
+            <h1 className="text-center mt-2 mb-5 text-secondary">Available Jobs</h1>
             {
-                jobs.map(job => <Job job={job}/>)
+                jobs.map(job => <Job key={job._id} job={job} />)
             }
         </div>
     );

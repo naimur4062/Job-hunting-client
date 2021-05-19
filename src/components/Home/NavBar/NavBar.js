@@ -29,7 +29,7 @@ const NavBar = () => {
                             <Link to="/postJobs"><span className="navLink">EMPLOYER</span></Link>
                         </Nav.Link>
                         <Nav.Link className="nav">
-                            <Link to="/blogs"><span className="navLink">EMPLOYEE</span></Link>
+                            <Link to="/jobs"><span className="navLink">EMPLOYEE</span></Link>
                         </Nav.Link>
                         <Nav.Link className="nav">
                                 <Link to="/login"><Button id="login-btn">Login</Button></Link>

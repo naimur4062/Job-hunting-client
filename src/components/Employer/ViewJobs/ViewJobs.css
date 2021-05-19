@@ -1,0 +1,23 @@
+.job{
+    border-radius: 20px;
+    padding: 20px;
+}
+.job-heading{
+    background-color: #f5f6fa;
+    padding: 10px;
+    border-radius: 20px;
+}
+.city p{
+    margin-left: 50px;
+    width: 200px;
+}
+.openings p{
+    margin-left: 125px;
+}
+.applicants{
+    margin-left: 100px;
+}
+
+.applicants Button{
+    height: 35px;
+}
