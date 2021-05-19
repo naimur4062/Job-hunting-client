@@ -1,11 +1,22 @@
 import React from 'react';
-import Sidebar from '../../Shared/Sidebar/Sidebar';
-import PostJobs from '../PostJobs/PostJobs';
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 const Admin = () => {
     return (
-        <div className="container-fluid" >
-                <PostJobs />
+        <div>
+            <div className="container d-flex justify-content-center align-items-center available-jobs">
+                <Link to="/postJobs">
+                    <Button variant="contained" color="primary">
+                        Add Jobs
+                    </Button>
+                </Link>
+                <Link to="/viewJobs">
+                    <Button variant="contained" color="primary">
+                        View Jobs List
+                    </Button>
+                </Link>
+            </div>
         </div>
     );
 };

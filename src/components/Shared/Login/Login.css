@@ -1,0 +1,17 @@
+.login .card{
+   width: 100%;
+   padding: 4%;
+   margin-top: 30px;
+   margin-bottom: 40px;
+}
+
+.formControl{
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.login .card button{
+    width: 100%;
+    background-color: #ff4880;
+    color: white;
+}

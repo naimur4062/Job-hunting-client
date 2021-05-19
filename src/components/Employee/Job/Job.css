@@ -4,7 +4,7 @@
     border: 1px solid blueviolet;
 }
   
-.card:hover {
+.card-area .card:hover {
     transform: translateY(-20px);
     box-shadow: 5px 20px 10px  rgba(2,12,27,0.7)
 }
