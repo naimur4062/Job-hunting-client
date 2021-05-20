@@ -23,7 +23,7 @@ const PostJobs = () => {
             ctc: data.ctc,
             description: data.description
         };
-        const url = `http://localhost:5000/addJob`;
+        const url = `https://gentle-harbor-69584.herokuapp.com/addJob`;
         fetch(url, {
             method: 'POST',
             headers: {

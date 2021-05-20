@@ -7,7 +7,7 @@ const YourJobs = () => {
     const [yourJobs, setYourJobs] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/yourJobs?email=' + signedInUser.email)
+        fetch('https://gentle-harbor-69584.herokuapp.com/yourJobs?email=' + signedInUser.email)
             .then(res => res.json())
             .then(data => setYourJobs(data))
     }, [])

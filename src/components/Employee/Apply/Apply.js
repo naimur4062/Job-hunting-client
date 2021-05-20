@@ -14,7 +14,7 @@ const Apply = () => {
     let history = useHistory();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/job/${id}`)
+        fetch(`https://gentle-harbor-69584.herokuapp.com/job/${id}`)
             .then(res => res.json())
             .then(data => {
                 setApply(data[0])
@@ -30,7 +30,7 @@ const Apply = () => {
             job: apply,
             resume: resumeURL
         };
-        const url = `http://localhost:5000/addApplicant`;
+        const url = `https://gentle-harbor-69584.herokuapp.com/addApplicant`;
         fetch(url, {
             method: 'POST',
             headers: {

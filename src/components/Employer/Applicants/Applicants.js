@@ -7,7 +7,7 @@ const Applicants = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/applicant/${id}?id=` + id) 
+        fetch(`https://gentle-harbor-69584.herokuapp.com/applicant/${id}?id=` + id) 
             .then(res => res.json())
             .then(data => {
                setApplicants(data);

@@ -6,7 +6,7 @@ import Job from '../Job/Job';
 const Jobs = () => {
     const [jobs, setJobs] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/jobs')
+        fetch('https://gentle-harbor-69584.herokuapp.com/jobs')
         .then(res => res.json())
         .then(data => setJobs(data))
     }, [jobs])
