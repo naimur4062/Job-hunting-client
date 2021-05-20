@@ -61,12 +61,12 @@ const Apply = () => {
             });
     }
     return (
-        <div>
+        <div style={{height: '90vh'}}>
             <div className="container applied">
-                <div className="admin-form mt-3">
+                <div data-aos="zoom-in" className="admin-form mt-3">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="admin container shadow p-3 mb-3 mt-5 bg-body">
-                            <h3 className="text-center">{apply.title}</h3>
+                            <h3 className="text-center text-secondary">{apply.title}</h3>
                             <div className="col-md-8 form-group mx-auto">
                                 <label htmlFor="form-label">Name</label> <br />
                                 <input name="name" placeholder="Enter Your Name" type="form-control" required ref={register} className="form-control" />

@@ -2,17 +2,3 @@
     border-radius: 10px;
     background-color: #ccd6f6;
 }
-.card-title img{
-    width: 80px;
-    background-color: #00446a;
-    padding: 15px;
-    border-radius: 25px;
-}
-.card-title h6{
-    background-color: #00446a;
-    color: white;
-    height: 30px;
-    padding: 5px;
-    border-radius: 5px;
-    margin-top: 10px;
-}

@@ -14,7 +14,7 @@ const Applicants = () => {
             })
     }, [id]);
     return (
-        <div>
+        <div style={{height: '100vh'}}>
             <ApplicantsDetail applicants={applicants}/>
         </div>
     );

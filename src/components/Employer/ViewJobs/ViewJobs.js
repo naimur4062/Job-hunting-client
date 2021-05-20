@@ -24,7 +24,7 @@ const ViewJobs = () => {
     };
 
     return (
-        <div className="container-fluid" >
+        <div style={{height: '100vh'}} className="container-fluid" >
             <h1 data-aos="fade-down" style={{color: '#ccd6f6'}} className="text-center">All Jobs List</h1>
             <div className="d-flex justify-content-center p-4 pr-5">
                 <div data-aos="zoom-in" className="container job shadow mb-3 bg-body p-4" style={{ borderRadius: '8px' }}>
