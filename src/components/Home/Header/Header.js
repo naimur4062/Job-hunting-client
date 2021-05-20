@@ -12,9 +12,11 @@ const Header = () => {
                         Available Jobs
                 </Button>
                 </Link>
-                <Button variant="contained" color="primary">
-                    Your Jobs
+                <Link to="/yourJobs">
+                    <Button variant="contained" color="primary">
+                        Your Applied Jobs
                 </Button>
+                </Link>
             </div>
         </div>
     );

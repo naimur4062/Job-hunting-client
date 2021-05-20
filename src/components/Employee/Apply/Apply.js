@@ -1,15 +1,17 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { useForm } from "react-hook-form";
+import axios from 'axios';
 
 
 const Apply = () => {
     const { register, handleSubmit } = useForm();
     const [apply, setApply] = useState([]);
-    // const [signedInUser, setSignedInUser] = useContext(UserContext);
+    const [resumeURL, setResumeURL] = useState(null);
     const { id } = useParams();
+    let history = useHistory();
 
     useEffect(() => {
         fetch(`http://localhost:5000/job/${id}`)
@@ -24,8 +26,9 @@ const Apply = () => {
             name: data.name,
             email: data.email,
             phone: data.phone,
+            jobId: apply._id,
             job: apply,
-            resume: data.resume
+            resume: resumeURL
         };
         const url = `http://localhost:5000/addApplicant`;
         fetch(url, {
@@ -38,8 +41,24 @@ const Apply = () => {
             .then(res => {
                 if(res){
                     alert('Your application has been completed.');
+                    history.push('/yourJobs')
                 }
             })
+    }
+
+    const handleResumeUpload = (event) => {
+        const resumeData = new FormData();
+        resumeData.set('key', '3fbd18749a02465de2e5cad61c40c47a');
+        resumeData.append('image', event.target.files[0]);
+
+        axios.post('https://api.imgbb.com/1/upload',
+            resumeData)
+            .then(function (response) {
+                setResumeURL(response.data.data.display_url);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
     return (
         <div>
@@ -62,10 +81,12 @@ const Apply = () => {
                             </div>
                             <div className="col-md-8 pt-2 form-group mx-auto">
                                 <label htmlFor="form-label">Upload Your Resume</label> <br />
-                                <input name="resume" type="file" required ref={register} className="form-control" />
+                                <input onChange={handleResumeUpload} name="exampleRequired" type="file" required className="form-control" />
                             </div>
-                            <div className="save-button col-md-8 pt-2 form-group mx-auto text-center sendMessage">
-                                <input type="submit" className="btn btn-info" value="APPLY" required />
+                            <div className="save-button col-md-8 pt-2 form-group mx-auto text-center sendMessage">  
+                                {
+                                    resumeURL ? <input type="submit" className="btn btn-danger" value="APPLY" required /> : <input type="submit" className="btn btn-primary" value="APPLY" disabled />
+                                }
                             </div>
                         </div>
                     </form>

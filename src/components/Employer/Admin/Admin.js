@@ -8,12 +8,12 @@ const Admin = () => {
             <div className="container d-flex justify-content-center align-items-center available-jobs">
                 <Link to="/postJobs">
                     <Button variant="contained" color="primary">
-                        Add Jobs
+                        Post Job
                     </Button>
                 </Link>
                 <Link to="/viewJobs">
                     <Button variant="contained" color="primary">
-                        View Jobs List
+                        View Job List
                     </Button>
                 </Link>
             </div>

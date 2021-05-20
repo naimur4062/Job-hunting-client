@@ -7,7 +7,6 @@ import { UserContext } from '../../../App';
 
 const NavBar = () => {
     const [signedInUser, setSignedInUser] = useContext(UserContext);
-    console.log(signedInUser)
 
     return (
         <div>
@@ -36,8 +35,8 @@ const NavBar = () => {
                             <Link to="/jobs"><span className="navLink">EMPLOYEE</span></Link>
                         </Nav.Link>
                         <Nav.Link className="nav">
-                            <h5><span className="navLink">{signedInUser.displayName}</span></h5>
                             {!signedInUser.displayName && <Link to="/login"><Button id="login-btn">LOGIN</Button></Link>}
+                            <h5><span className="navLink">{signedInUser.displayName}</span></h5>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

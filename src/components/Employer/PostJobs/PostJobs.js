@@ -1,9 +1,11 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { useHistory } from 'react-router';
 import './PostJobs.css';
 
 const PostJobs = () => {
     const { register, handleSubmit } = useForm();
+    let history = useHistory();
 
     const onSubmit = data => {
         const jobData = {
@@ -26,12 +28,13 @@ const PostJobs = () => {
             .then(res => {
                 if(res){
                     alert('job saved successfully to database');
+                    history.push('/viewJobs')
                 }
             })
     }
     return (
         <div className="mt-2 addJob">
-            <h3 className="text-center">Add Jobs</h3>
+            <h1 className="text-center text-secondary">Post Jobs</h1>
             <div className="admin-form mt-3">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="admin container shadow p-3 mb-3 mt-5 bg-body">

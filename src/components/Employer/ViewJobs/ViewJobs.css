@@ -7,17 +7,29 @@
     padding: 10px;
     border-radius: 20px;
 }
-.city p{
+.type{
     margin-left: 50px;
-    width: 200px;
 }
-.openings p{
-    margin-left: 125px;
+.city{
+    margin-left: 45px;
+}
+.openings{
+    margin-left: 70px;
 }
 .applicants{
-    margin-left: 100px;
+    margin-left: 5px;
 }
 
 .applicants Button{
     height: 35px;
+}
+
+@media only screen and (max-width: 600px) {
+    .city, .type, .openings, .applicants{
+        margin-left: 0px;
+    }
+    .applicants Button{
+        display: flex;
+        flex-direction: column;
+    }
 }

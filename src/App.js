@@ -6,7 +6,9 @@ import {
 } from "react-router-dom";
 import Apply from "./components/Employee/Apply/Apply";
 import Jobs from "./components/Employee/Jobs/Jobs";
+import YourJobs from "./components/Employee/YourJobs/YourJobs";
 import Admin from "./components/Employer/Admin/Admin";
+import Applicants from "./components/Employer/Applicants/Applicants";
 import PostJobs from "./components/Employer/PostJobs/PostJobs";
 import ViewJobs from "./components/Employer/ViewJobs/ViewJobs";
 import Home from "./components/Home/Home/Home";
@@ -31,21 +33,27 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/admin">
+          <PrivateRoute path="/admin">
             <Admin />
-          </Route>
-          <Route path="/postJobs">
+          </PrivateRoute>
+          <PrivateRoute path="/postJobs">
             <PostJobs />
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/jobs">
             <Jobs />
           </PrivateRoute>
-          <Route path="/job/:id">
+          <PrivateRoute path="/job/:id">
             <Apply />
-          </Route>
-          <Route path="/viewJobs">
+          </PrivateRoute>
+          <PrivateRoute path="/applicant/:id">
+            <Applicants />
+          </PrivateRoute>
+          <PrivateRoute path="/viewJobs">
             <ViewJobs />
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path="/yourJobs">
+            <YourJobs/>
+          </PrivateRoute>
           <Route path="/login">
             <Login />
           </Route>

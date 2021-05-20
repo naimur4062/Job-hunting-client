@@ -1,0 +1,21 @@
+.phone{
+    margin-left: 110px;
+}
+
+.email{
+    margin-left: 100px;
+}
+
+.resume{
+    margin-left: 150px;
+}
+
+.resume a:hover{
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .phone, .email, .resume{
+        margin-left: 0px;
+    }
+}

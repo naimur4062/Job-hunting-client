@@ -84,7 +84,6 @@ const Login = () => {
         e.preventDefault();
     }
  
-    /////
     const updateUserName = name => {
         const user = firebase.auth().currentUser;
 
