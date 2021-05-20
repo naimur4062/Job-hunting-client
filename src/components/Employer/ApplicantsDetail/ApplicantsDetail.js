@@ -4,7 +4,7 @@ import './ApplicantsDetail.css';
 const ApplicantsDetail = ({ applicants }) => {
     return (
         <div className="container-fluid" >
-            <h1 className="text-center">Total Applicants: {applicants.length}</h1>
+            <h1 style={{color: '#ccd6f6'}} className="text-center">Total Applicants: {applicants.length}</h1>
             <div className="d-flex justify-content-center p-4 pr-5">
                 <div className="container job shadow mb-3 bg-body p-4" style={{ borderRadius: '8px' }}>
                     <div className="row pt-3 ps-3 d-flex justify-content-between job-heading">
