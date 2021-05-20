@@ -1,7 +1,3 @@
-/* .addJob{
-    overflow: hidden;
-} */
-
 .admin label{
     font-weight: 700;
 }
@@ -22,4 +18,12 @@
 
 .job-description input{
     height: 50px;
+}
+
+.addJob{
+    padding-bottom: 50px;
+}
+
+.addJob h1{
+    color: #ccd6f6;
 }

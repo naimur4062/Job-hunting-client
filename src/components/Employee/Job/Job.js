@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Job.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Job = ({ job }) => {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, []);
     const { title, type, city, openings, skills, ctc, description } = job;
     return (
         <div className="col-md-4 text-center d-flex justify-content-center align-items-center mb-5 card-area">
-            <div className="card" style={{ width: '25rem' }}>
+            <div data-aos="flip-left" className="card" style={{ width: '25rem' }}>
                 <div className="card-body">
                     <h3 className="card-title text-color">{title}</h3>
                     <h5 className="mt-3 text-secondary">Skills: {skills}</h5>

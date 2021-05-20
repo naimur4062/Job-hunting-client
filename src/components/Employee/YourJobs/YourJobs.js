@@ -14,8 +14,8 @@ const YourJobs = () => {
     return (
         <div className="container">
             <div className="mb-5 text-center">
-                <h1 style={{ color: '#3a4256' }}>Dear, {signedInUser.displayName}</h1>
-                <h3 style={{ color: 'gray' }}>This is your applied job list</h3>
+                <h1 style={{ color: '#ccd6f6' }}>Dear, {signedInUser.displayName}</h1>
+                <h3 style={{ color: '#ccd6f6' }}>This is your applied job list</h3>
             </div>
             <div className="row container">
                 {

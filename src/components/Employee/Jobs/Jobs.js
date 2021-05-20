@@ -13,7 +13,7 @@ const Jobs = () => {
 
     return (
         <div className="row container-fluid">
-            <h1 className="text-center mt-2 mb-5 text-secondary">Available Jobs</h1>
+            <h1 style={{color: '#ccd6f6'}} className="text-center mt-2 mb-5">Available Jobs</h1>
             {
                 jobs.map(job => <Job key={job._id} job={job} />)
             }

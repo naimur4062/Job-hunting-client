@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Button } from '@material-ui/core';
 import { Card, Form } from 'react-bootstrap';
 import { useState } from 'react';
@@ -8,8 +8,13 @@ import firebaseConfig from './firebase.config';
 import { useHistory, useLocation } from 'react-router-dom';
 import './Login.css';
 import { UserContext } from '../../../App';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Login = () => {
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, []);
     const [newUser, setNewUser] = useState(false);
     const [signedInUser, setSignedInUser] = useContext(UserContext);
     const history = useHistory();
@@ -97,8 +102,8 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <div className="col-md-4 m-auto login">
+        <div style={{height: '100vh'}}>
+            <div data-aos="zoom-in" className="col-md-4 m-auto login">
                 <Card className="card">
                     <Card.Body>
                         {newUser && <Card.Title>Create An Account</Card.Title>}

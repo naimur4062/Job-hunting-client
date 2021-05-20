@@ -3,8 +3,13 @@ import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import './ViewJobs.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ViewJobs = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1500 });
+    }, []);
     const [jobs, setJobs] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/jobs')
@@ -20,9 +25,9 @@ const ViewJobs = () => {
 
     return (
         <div className="container-fluid" >
-            <h1 className="text-center text-secondary">All Jobs List</h1>
+            <h1 data-aos="fade-down" style={{color: '#ccd6f6'}} className="text-center">All Jobs List</h1>
             <div className="d-flex justify-content-center p-4 pr-5">
-                <div className="container job shadow mb-3 bg-body p-4" style={{ borderRadius: '8px' }}>
+                <div data-aos="zoom-in" className="container job shadow mb-3 bg-body p-4" style={{ borderRadius: '8px' }}>
                     <div className="row pt-3 ps-3 d-flex justify-content-between job-heading">
                         <p className="col-md-2">Title</p>
                         <p className="col-md-2">Type</p>

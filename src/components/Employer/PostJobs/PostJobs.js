@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router';
 import './PostJobs.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const PostJobs = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1500 });
+    }, []);
+
     const { register, handleSubmit } = useForm();
     let history = useHistory();
 
@@ -34,8 +40,8 @@ const PostJobs = () => {
     }
     return (
         <div className="mt-2 addJob">
-            <h1 className="text-center text-secondary">Post Jobs</h1>
-            <div className="admin-form mt-3">
+            <h1 data-aos="fade-down" className="text-center">Post Jobs</h1>
+            <div data-aos="zoom-in" className="admin-form mt-3">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="admin container shadow p-3 mb-3 mt-5 bg-body">
                         <div className="col-md-8 form-group mx-auto">

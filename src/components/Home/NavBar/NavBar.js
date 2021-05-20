@@ -13,12 +13,12 @@ const NavBar = () => {
             <Navbar sticky="top" expand="lg" collapseOnSelect className="d-flex justify-content-between">
                 <Navbar.Brand>
                     <div className="d-flex mt-5">
-                        <div className="mt-2 mr-2">
+                        <div className="mr-2">
                             <img style={{ width: '80px' }} src={Logo} alt="" />
                         </div>
                         <div className="nav-header">
                             <h3 style={{ letterSpacing: '5px', color: '#ff4880' }}>JOB EXPRESS</h3>
-                            <h3 style={{ color: '#3a4256' }}>Find Your Jobs</h3>
+                            <h3 style={{ color: '#ccd6f6' }}>Find Your Jobs</h3>
                         </div>
                     </div>
                 </Navbar.Brand>

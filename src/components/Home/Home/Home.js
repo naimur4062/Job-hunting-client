@@ -3,7 +3,7 @@ import Header from '../Header/Header';
 
 const Home = () => {
     return (
-        <div className="container">
+        <div style={{height: '70vh'}} className="container">
             <Header/>
         </div>
     );
