@@ -1,21 +1,46 @@
-.navLink{
-    color:#ccd6f6;
-    font-weight: 700;
+.navLink,
+#basic-nav-dropdown,
+.dropMenu span {
+  color: #ccd6f6;
+  font-weight: 700;
+  padding: 8px;
 }
 
-#toggle{
-    background-color: #ccd6f6;
-    border: 2px solid turquoise;
+.dropMenu span {
+  color: #00101a;
 }
 
-#login-btn{
-    background-color: #ff4880;
-    padding: 5px;
-    color: white;
-    width: 100px;
-    font-weight: 500;
+nav a:hover,
+.dropMenu a:hover {
+  text-decoration: none;
 }
 
-Nav .nav a{
-    text-decoration: none;
+.dropMenu a:hover span {
+  color: blue;
+}
+
+#basic-nav-dropdown {
+  margin-top: -8px;
+}
+
+#toggle {
+  background-color: #ccd6f6;
+  border: 2px solid turquoise;
+}
+
+#login-btn {
+  background-color: #ff4880;
+  padding: 5px;
+  color: white;
+  width: 100px;
+  font-weight: 500;
+  margin-top: -15px;
+}
+
+Nav .nav a {
+  text-decoration: none;
+}
+
+.user-name h5 {
+  margin-top: -1px;
 }

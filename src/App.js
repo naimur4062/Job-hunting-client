@@ -7,12 +7,14 @@ import {
 import Apply from "./components/Employee/Apply/Apply";
 import Jobs from "./components/Employee/Jobs/Jobs";
 import YourJobs from "./components/Employee/YourJobs/YourJobs";
-import Admin from "./components/Employer/Admin/Admin";
 import Applicants from "./components/Employer/Applicants/Applicants";
+import MakeAdmin from "./components/Employer/MakeAdmin/MakeAdmin";
+import ManageJobs from "./components/Employer/ManageJobs/ManageJobs";
 import PostJobs from "./components/Employer/PostJobs/PostJobs";
 import ViewJobs from "./components/Employer/ViewJobs/ViewJobs";
 import Home from "./components/Home/Home/Home";
 import NavBar from "./components/Home/NavBar/NavBar";
+import NotFound from "./components/NotFound/NotFound";
 import Login from "./components/Shared/Login/Login";
 import PrivateRoute from "./components/Shared/PrivateRoute/PrivateRoute";
 
@@ -21,21 +23,19 @@ export const UserContext = createContext();
 function App() {
   const [signedInUser, setSignedInUser] = useState({});
   return (
-    <div style={{backgroundColor: '#00101a'}}>
+    <div style={{ backgroundColor: '#00101a' }}>
       <UserContext.Provider value={[signedInUser, setSignedInUser]}>
         <Router>
-          <div className="container">
-            <NavBar />
-          </div>
+          <NavBar />
           <Switch>
             <Route exact path="/">
-              <Home/>
+              <Home />
             </Route>
             <Route path="/home">
               <Home />
             </Route>
-            <PrivateRoute path="/admin">
-              <Admin />
+            <PrivateRoute path="/makeAdmin">
+              <MakeAdmin />
             </PrivateRoute>
             <PrivateRoute path="/postJobs">
               <PostJobs />
@@ -52,11 +52,17 @@ function App() {
             <PrivateRoute path="/viewJobs">
               <ViewJobs />
             </PrivateRoute>
+            <PrivateRoute path="/manageJobs">
+              <ManageJobs />
+            </PrivateRoute>
             <PrivateRoute path="/yourJobs">
               <YourJobs />
             </PrivateRoute>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </Router>

@@ -1,0 +1,12 @@
+.footer {
+  margin-top: 12%;
+  padding: 10px;
+}
+
+.footer p {
+  color: gray;
+}
+
+.footer a {
+  color: #b39f67;
+}

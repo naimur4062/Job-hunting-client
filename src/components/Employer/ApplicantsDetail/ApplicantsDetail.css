@@ -1,25 +1,31 @@
-.phone{
-    margin-left: 110px;
+.phone {
+  margin-left: 110px;
 }
 
-.email{
-    margin-left: 100px;
+.email {
+  margin-left: 100px;
 }
 
-.resume{
-    margin-left: 150px;
+.resume {
+  margin-left: 150px;
 }
 
-.resume a:hover{
-    text-decoration: none;
+.resume a:hover {
+  text-decoration: none;
 }
 
-.job p{
-    color: gray;
+.resume a:hover p {
+  color: blue;
+}
+
+.job p {
+  color: gray;
 }
 
 @media only screen and (max-width: 600px) {
-    .phone, .email, .resume{
-        margin-left: 0px;
-    }
+  .phone,
+  .email,
+  .resume {
+    margin-left: 0px;
+  }
 }

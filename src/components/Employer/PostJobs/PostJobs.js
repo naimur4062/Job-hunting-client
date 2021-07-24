@@ -21,7 +21,8 @@ const PostJobs = () => {
             openings: data.openings,
             skills: data.skills,
             ctc: data.ctc,
-            description: data.description
+            description: data.description,
+            date: new Date()
         };
         const url = `https://gentle-harbor-69584.herokuapp.com/addJob`;
         fetch(url, {
@@ -32,7 +33,7 @@ const PostJobs = () => {
             body: JSON.stringify(jobData)
         })
             .then(res => {
-                if(res){
+                if (res) {
                     alert('job saved successfully to database');
                     history.push('/viewJobs')
                 }
@@ -43,7 +44,7 @@ const PostJobs = () => {
             <h1 data-aos="fade-down" className="text-center">Post Jobs</h1>
             <div data-aos="zoom-in" className="admin-form mt-3">
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="admin container shadow p-3 mb-3 mt-5 bg-body">
+                    <div className="admin container shadow p-3 mb-3 mt-5">
                         <div className="col-md-8 form-group mx-auto">
                             <label htmlFor="form-label">Job Title</label> <br />
                             <input name="title" defaultValue="" placeholder="Enter Job Title" type="form-control" required ref={register} className="form-control" />
@@ -58,7 +59,7 @@ const PostJobs = () => {
                         </div>
                         <div className="col-md-8 pt-2 form-group mx-auto">
                             <label htmlFor="form-label"> Number of Openings
-                                </label> <br />
+                            </label> <br />
                             <input name="openings" defaultValue="" placeholder="Add Openings number" required ref={register} className="form-control" />
                         </div>
                         <div className="col-md-8 pt-2 form-group mx-auto">

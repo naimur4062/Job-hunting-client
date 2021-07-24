@@ -9,18 +9,23 @@ const Admin = () => {
         AOS.init({ duration: 2000 });
     }, []);
     return (
-        <div style={{height: '70vh'}}> 
+        <div style={{ height: '70vh' }}>
             <div className="container d-flex justify-content-center align-items-center available-jobs">
-                <Link to="/postJobs">
+                {/* <Link to="/postJobs">
                     <Button data-aos="fade-down" variant="contained" color="primary">
                         Post Job
                     </Button>
                 </Link>
                 <Link to="/viewJobs">
-                    <Button data-aos="fade-up" variant="contained" color="primary">
+                    <Button data-aos="zoom-in" variant="contained" color="primary">
                         View Job List
                     </Button>
                 </Link>
+                <Link to="/makeAdmin">
+                    <Button data-aos="fade-up" variant="contained" color="primary">
+                        Make Admin
+                    </Button>
+                </Link> */}
             </div>
         </div>
     );

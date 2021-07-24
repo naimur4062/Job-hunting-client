@@ -10,6 +10,7 @@ import './Login.css';
 import { UserContext } from '../../../App';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import loadingImg from '../../../images/loading.png';
 
 const Login = () => {
     useEffect(() => {
@@ -17,6 +18,7 @@ const Login = () => {
     }, []);
     const [newUser, setNewUser] = useState(false);
     const [signedInUser, setSignedInUser] = useContext(UserContext);
+    const [loading, setLoading] = useState(false);
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
@@ -27,6 +29,8 @@ const Login = () => {
         photo: '',
         error: '',
     });
+
+    console.log('user', user.error)
 
     if (!firebase.apps.length) {
         firebase.initializeApp(firebaseConfig);
@@ -50,14 +54,14 @@ const Login = () => {
     }
 
     const handleSubmit = (e) => {
+        loginLoading();
         if (newUser && user.email && user.password) {
             firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
                 .then((userCredential) => {
-                    updateUserName(user.name); 
+                    updateUserName(user.name);
                     const { displayName, email } = userCredential.user;
                     const signedInUser = { displayName: user.name, email };
                     const newUserInfo = { ...user };
-                    newUserInfo.error = '';
                     setUser(newUserInfo);
                     setSignedInUser(signedInUser);
                     history.replace(from);
@@ -66,6 +70,7 @@ const Login = () => {
                     const newUserInfo = { ...user };
                     newUserInfo.error = error.message;
                     setUser(newUserInfo);
+                    setLoading(false);
                 });
         }
 
@@ -77,18 +82,18 @@ const Login = () => {
                     setSignedInUser(signedInUser);
                     history.replace(from);
                     const newUserInfo = { ...user };
-                    newUserInfo.error = '';
                     setUser(newUserInfo);
                 })
                 .catch((error) => {
                     const newUserInfo = { ...user };
                     newUserInfo.error = error.message;
                     setUser(newUserInfo);
+                    setLoading(false)
                 });
         }
         e.preventDefault();
     }
- 
+
     const updateUserName = name => {
         const user = firebase.auth().currentUser;
 
@@ -99,10 +104,14 @@ const Login = () => {
         }).catch(function (error) {
             console.log(error)
         });
-    }
+    };
+
+    const loginLoading = () => {
+        setLoading(true);
+    };
 
     return (
-        <div style={{height: '100vh'}}>
+        <div style={{ height: '100vh' }}>
             <div data-aos="zoom-in" className="col-md-4 m-auto login">
                 <Card className="card">
                     <Card.Body>
@@ -112,27 +121,25 @@ const Login = () => {
                             {newUser && <Form.Group controlId="formBasicName">
                                 <Form.Control type="name" onBlur={handleBlur} name="name" className="formControl" placeholder="Your Name" required />
                             </Form.Group>}
-
                             <Form.Group controlId="formBasicEmail">
                                 <Form.Control type="email" onBlur={handleBlur} name="email" className="formControl" placeholder="username or email" required />
                             </Form.Group>
-
                             <Form.Group className="mt-2" controlId="formBasicPassword">
                                 <Form.Control type="password" onBlur={handleBlur} name="password" className="formControl" placeholder="password" required />
                             </Form.Group>
-
                             {newUser && <Form.Group className="mt-2" controlId="formBasicPassword">
                                 <Form.Control type="password" onBlur={handleBlur} name="password" className="formControl" placeholder="Conform Password" required />
                             </Form.Group>}
-
-
-                            {newUser && <Button className="mt-5 rounded-0" type="submit">
-                                Create an Account
-                               </Button>}
-                            {!newUser && <Button className="mt-5 rounded-0" type="submit">
-                                Login
-                               </Button>}
-
+                            <>
+                                {newUser ? <Button className="mt-5 rounded-0" type="submit">
+                                    {loading === true ? <img src={loadingImg} alt="" /> : <p>Create an Account</p>}
+                                </Button>
+                                    :
+                                    <Button className="mt-5 rounded-0" type="submit">
+                                        {loading === true ? <img src={loadingImg} alt="" /> : <p>Login</p>}
+                                    </Button>
+                                }
+                            </>
                             <Form.Text className="text-center mt-3" style={{ fontSize: '17px' }}>
                                 <Form.Group>
                                     <Form.Check
@@ -146,7 +153,7 @@ const Login = () => {
                     </Card.Body>
                 </Card>
                 <div className="mt-3">
-                    <p style={{color: 'red'}}>{user.error}</p>
+                    <p style={{ color: 'red' }}>{user.error}</p>
                 </div>
             </div>
         </div>

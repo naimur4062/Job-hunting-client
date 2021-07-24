@@ -8,11 +8,12 @@ const Job = ({ job }) => {
     useEffect(() => {
         AOS.init({ duration: 2000 });
     }, []);
-    const { title, type, city, openings, skills, ctc, description } = job;
+    const { title, type, city, openings, skills, ctc, description, date } = job;
     return (
         <div className="col-md-4 text-center d-flex justify-content-center align-items-center mb-5 card-area">
             <div data-aos="flip-left" className="card" style={{ width: '25rem' }}>
                 <div className="card-body">
+                    <h5 className="card-title text-color">Post Date: {new Date(date).toLocaleString().split(',')[0]}</h5>
                     <h3 className="card-title text-color">{title}</h3>
                     <h5 className="mt-3 text-secondary">Skills: {skills}</h5>
                     <p className="card-text text-secondary">{description}</p>
@@ -25,9 +26,9 @@ const Job = ({ job }) => {
                         <h5>Openings: {openings}</h5>
                     </div>
                     <div className="mt-2">
-                    <Link to={`/job/${job._id}`}>
+                        <Link to={`/job/${job._id}`}>
                             Apply Now
-                    </Link>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -15,12 +15,12 @@ const Header = () => {
                 <Link to="/jobs">
                     <Button data-aos="zoom-in" variant="contained" color="primary">
                         Available Jobs
-                </Button>
+                    </Button>
                 </Link>
                 <Link to="/yourJobs">
                     <Button data-aos="zoom-in" variant="contained" color="primary">
                         Your Applied Jobs
-                </Button>
+                    </Button>
                 </Link>
             </div>
         </div>

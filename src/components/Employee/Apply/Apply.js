@@ -28,18 +28,19 @@ const Apply = () => {
             phone: data.phone,
             jobId: apply._id,
             job: apply,
-            resume: resumeURL
+            resume: resumeURL,
+            date: new Date()
         };
         const url = `https://gentle-harbor-69584.herokuapp.com/addApplicant`;
         fetch(url, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'content-Type': 'application/json'
             },
             body: JSON.stringify(applicantData)
         })
             .then(res => {
-                if(res){
+                if (res) {
                     alert('Your application has been completed.');
                     history.push('/yourJobs')
                 }
@@ -61,11 +62,11 @@ const Apply = () => {
             });
     }
     return (
-        <div style={{height: '90vh'}}>
+        <div style={{ height: '90vh' }}>
             <div className="container applied">
                 <div data-aos="zoom-in" className="admin-form mt-3">
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="admin container shadow p-3 mb-3 mt-5 bg-body">
+                        <div className="admin container shadow rounded p-3 mb-3 mt-5 bg-body">
                             <h3 className="text-center text-secondary">{apply.title}</h3>
                             <div className="col-md-8 form-group mx-auto">
                                 <label htmlFor="form-label">Name</label> <br />
@@ -83,7 +84,7 @@ const Apply = () => {
                                 <label htmlFor="form-label">Upload Your Resume</label> <br />
                                 <input onChange={handleResumeUpload} name="exampleRequired" type="file" required className="form-control" />
                             </div>
-                            <div className="save-button col-md-8 pt-2 form-group mx-auto text-center sendMessage">  
+                            <div className="save-button col-md-8 pt-2 form-group mx-auto text-center sendMessage">
                                 {
                                     resumeURL ? <input type="submit" className="btn btn-danger" value="APPLY" required /> : <input type="submit" className="btn btn-primary" value="APPLY" disabled />
                                 }
