@@ -44,7 +44,7 @@ const NavBar = () => {
                             {isAdmin === true && <NavDropdown title="ADMIN" id="basic-nav-dropdown">
                                 <div className="dropMenu">
                                     <NavDropdown.Item>
-                                        <Link to="/postJobs"><span className="nav">Post Job</span></Link>
+                                        <Link to="/postJob"><span className="nav">Post Job</span></Link>
                                     </NavDropdown.Item>
                                     <NavDropdown.Item>
                                         <Link to="/viewJobs"><span className="nav">View Jobs</span></Link>

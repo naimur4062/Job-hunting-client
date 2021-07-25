@@ -1,0 +1,6 @@
+.delete img,
+.edit img {
+  width: 25px;
+  margin: 0px 120px auto;
+  cursor: pointer;
+}
