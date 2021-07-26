@@ -22,7 +22,7 @@ const ManageJobs = () => {
     }, [dependency]);
 
     const deleteJob = (id) => {
-        fetch(`http://localhost:5000/deleteJob/${id}`, {
+        fetch(`https://gentle-harbor-69584.herokuapp.com/deleteJob/${id}`, {
             method: 'DELETE'
         })
             .then(res => {
@@ -34,7 +34,7 @@ const ManageJobs = () => {
     };
 
     const editJob = (id) => {
-        history.push(`/edit/${id}`)
+        history.push(`/update/${id}`)
     }
 
     return (
@@ -47,7 +47,7 @@ const ManageJobs = () => {
                             <div className="row pt-3 text-center d-flex justify-content-between job-heading">
                                 <p className="col-md-3">Title</p>
                                 <p className="col-md-3">Post Date</p>
-                                <p className="col-md-3">Edit Job</p>
+                                <p className="col-md-3">Update Job</p>
                                 <p className="col-md-3">Delete Job</p>
                             </div>
                             <div className="row pt-3 text-center d-flex justify-content-between">

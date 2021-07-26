@@ -11,7 +11,7 @@ const MakeAdmin = () => {
 
     const onSubmit = data => {
         const adminData = { email: data.email }
-        const url = `http://localhost:5000/makeAdmin`;
+        const url = `https://gentle-harbor-69584.herokuapp.com/makeAdmin`;
         fetch(url, {
             method: 'POST',
             headers: {

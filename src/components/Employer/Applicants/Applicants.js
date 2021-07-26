@@ -5,6 +5,7 @@ import ApplicantsDetail from '../ApplicantsDetail/ApplicantsDetail';
 
 const Applicants = () => {
     const [applicants, setApplicants] = useState([]);
+    const [dependency, setDependency] = useState([]);
     const { id } = useParams();
 
     useEffect(() => {
@@ -14,10 +15,24 @@ const Applicants = () => {
                 setApplicants(data);
             })
     }, [id]);
+
+    useEffect(() => {
+        fetch('https://gentle-harbor-69584.herokuapp.com/jobs')
+            .then(res => res.json())
+            .then(data => setDependency(data))
+    }, []);
+
     return (
         <div style={{ height: '100vh' }}>
             {
-                applicants.length ? <ApplicantsDetail applicants={applicants} /> :
+                dependency.length ?
+                    <>
+                        {applicants.length ?
+                            <ApplicantsDetail applicants={applicants} />
+                            :
+                            <h1 style={{ color: 'red' }} className="text-center mt-5">No applicants yet</h1>}
+                    </>
+                    :
                     <div className="text-center mt-5">
                         <Spinner animation="grow" variant="primary" />
                         <Spinner animation="grow" variant="success" />

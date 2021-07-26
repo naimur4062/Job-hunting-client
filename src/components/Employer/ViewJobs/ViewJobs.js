@@ -15,7 +15,7 @@ const ViewJobs = () => {
         fetch('https://gentle-harbor-69584.herokuapp.com/jobs')
             .then(res => res.json())
             .then(data => setJobs(data.reverse()))
-    }, [jobs]);
+    }, []);
 
     let history = useHistory();
 

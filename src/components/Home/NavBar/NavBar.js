@@ -8,9 +8,10 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
     const [signedInUser, setSignedInUser] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false);
+    console.log('isAdmin', isAdmin)
 
     useEffect(() => {
-        fetch('http://localhost:5000/isAdmin', {
+        fetch('https://gentle-harbor-69584.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -44,7 +45,7 @@ const NavBar = () => {
                             {isAdmin === true && <NavDropdown title="ADMIN" id="basic-nav-dropdown">
                                 <div className="dropMenu">
                                     <NavDropdown.Item>
-                                        <Link to="/postJob"><span className="nav">Post Job</span></Link>
+                                        <Link to="/createJob"><span className="nav">Post Job</span></Link>
                                     </NavDropdown.Item>
                                     <NavDropdown.Item>
                                         <Link to="/viewJobs"><span className="nav">View Jobs</span></Link>

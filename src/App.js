@@ -10,7 +10,7 @@ import YourJobs from "./components/Employee/YourJobs/YourJobs";
 import Applicants from "./components/Employer/Applicants/Applicants";
 import MakeAdmin from "./components/Employer/MakeAdmin/MakeAdmin";
 import ManageJobs from "./components/Employer/ManageJobs/ManageJobs";
-import PostEditJob from "./components/Employer/PostJobs/PostEditJob";
+import CreateUpdateJob from "./components/Employer/PostJobs/CreateUpdateJob";
 import ViewJobs from "./components/Employer/ViewJobs/ViewJobs";
 import Home from "./components/Home/Home/Home";
 import NavBar from "./components/Home/NavBar/NavBar";
@@ -37,11 +37,11 @@ function App() {
             <PrivateRoute path="/makeAdmin">
               <MakeAdmin />
             </PrivateRoute>
-            <PrivateRoute path="/postJob">
-              <PostEditJob />
+            <PrivateRoute path="/createJob">
+              <CreateUpdateJob />
             </PrivateRoute>
-            <PrivateRoute path="/edit/:id">
-              <PostEditJob />
+            <PrivateRoute path="/update/:id">
+              <CreateUpdateJob />
             </PrivateRoute>
             <PrivateRoute path="/jobs">
               <Jobs />
