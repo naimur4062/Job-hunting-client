@@ -1,0 +1,12 @@
+@import "./components/Style/TextColor.scss";
+
+.App {
+  font-family: "Roboto", sans-serif;
+  background: $backgroundColor;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover;
+  min-height: 100vh;
+  overflow-x: hidden;
+}

@@ -6,7 +6,7 @@ import editImg from '../../../images/edit.png';
 import { useHistory } from 'react-router';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import './ManageJobs.css'
+import './ManageJobs.scss'
 
 const ManageJobs = () => {
     const [dependency, setDependency] = useState(false);
@@ -38,7 +38,7 @@ const ManageJobs = () => {
     }
 
     return (
-        <div style={{ minHeight: '80vh' }} className="container-fluid" >
+        <div className="container-fluid" >
             {
                 jobs.length ? <>
                     <h1 data-aos="fade-down" style={{ color: '#ccd6f6' }} className="text-center">Manage All Jobs</h1>

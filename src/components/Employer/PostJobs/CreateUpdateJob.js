@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from 'react-router';
-import './CreateUpdateJob.css';
+import './CreateUpdateJob.scss';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -75,7 +75,7 @@ const CreateUpdateJob = () => {
         }
     }, [])
     return (
-        <div style={{ minHeight: '80vh' }} className="mt-2 addJob">
+        <div className="mt-2 addJob">
             {
                 pathname === '/createJob' | loading.length ?
                     <>

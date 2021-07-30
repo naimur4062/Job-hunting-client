@@ -1,15 +1,17 @@
+@import "../../Style/TextColor.scss";
+
 .admin label {
   font-weight: 700;
-  color: gray;
+  color: $grayColor;
 }
 
 .save-button input {
-  background-color: #ff4880;
+  background-color: $buttonBackgroundColor;
   border: none;
   width: 100px;
   height: 50px;
   font-size: 20px;
-  color: white;
+  color: $whiteColor;
   padding: 5px;
   border-radius: 10px;
 }
@@ -20,8 +22,7 @@
 
 .addJob {
   padding-bottom: 50px;
-}
-
-.addJob h1 {
-  color: #ccd6f6;
+  h1 {
+    color: $whiteSmokeColor;
+  }
 }

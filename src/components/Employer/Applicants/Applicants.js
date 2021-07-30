@@ -23,7 +23,7 @@ const Applicants = () => {
     }, []);
 
     return (
-        <div style={{ height: '100vh' }}>
+        <>
             {
                 dependency.length ?
                     <>
@@ -42,7 +42,7 @@ const Applicants = () => {
                         <Spinner animation="grow" variant="light" />
                     </div>
             }
-        </div>
+        </>
     );
 };
 

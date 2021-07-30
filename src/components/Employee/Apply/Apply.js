@@ -62,36 +62,34 @@ const Apply = () => {
             });
     }
     return (
-        <div style={{ height: '90vh' }}>
-            <div className="container applied">
-                <div data-aos="zoom-in" className="admin-form mt-3">
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="admin container shadow rounded p-3 mb-3 mt-5 bg-body">
-                            <h3 className="text-center text-secondary">{apply.title}</h3>
-                            <div className="col-md-8 form-group mx-auto">
-                                <label htmlFor="form-label">Name</label> <br />
-                                <input name="name" placeholder="Enter Your Name" type="form-control" required ref={register} className="form-control" />
-                            </div>
-                            <div className="col-md-8 pt-2 form-group mx-auto">
-                                <label htmlFor="form-label">Email</label><br />
-                                <input name="email" placeholder="Enter Your Email" required ref={register} className="form-control" />
-                            </div>
-                            <div className="col-md-8 pt-2 form-group mx-auto">
-                                <label htmlFor="form-label">Phone</label> <br />
-                                <input name="phone" placeholder="Enter Your Phone Number" required ref={register} className="form-control" />
-                            </div>
-                            <div className="col-md-8 pt-2 form-group mx-auto">
-                                <label htmlFor="form-label">Upload Your Resume</label> <br />
-                                <input onChange={handleResumeUpload} name="exampleRequired" type="file" required className="form-control" />
-                            </div>
-                            <div className="save-button col-md-8 pt-2 form-group mx-auto text-center sendMessage">
-                                {
-                                    resumeURL ? <input type="submit" className="btn btn-danger" value="APPLY" required /> : <input type="submit" className="btn btn-primary" value="APPLY" disabled />
-                                }
-                            </div>
+        <div className="container applied mb-5">
+            <div data-aos="zoom-in" className="admin-form mt-3">
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="admin container shadow rounded p-3 mb-3 mt-5 bg-body">
+                        <h3 className="text-center text-secondary">{apply.title}</h3>
+                        <div className="col-md-8 form-group mx-auto">
+                            <label htmlFor="form-label">Name</label> <br />
+                            <input name="name" placeholder="Enter Your Name" type="form-control" required ref={register} className="form-control" />
                         </div>
-                    </form>
-                </div>
+                        <div className="col-md-8 pt-2 form-group mx-auto">
+                            <label htmlFor="form-label">Email</label><br />
+                            <input name="email" placeholder="Enter Your Email" required ref={register} className="form-control" />
+                        </div>
+                        <div className="col-md-8 pt-2 form-group mx-auto">
+                            <label htmlFor="form-label">Phone</label> <br />
+                            <input name="phone" placeholder="Enter Your Phone Number" required ref={register} className="form-control" />
+                        </div>
+                        <div className="col-md-8 pt-2 form-group mx-auto">
+                            <label htmlFor="form-label">Upload Your Resume</label> <br />
+                            <input onChange={handleResumeUpload} name="exampleRequired" type="file" required className="form-control" />
+                        </div>
+                        <div className="save-button col-md-8 pt-2 form-group mx-auto text-center sendMessage">
+                            {
+                                resumeURL ? <input type="submit" className="btn btn-danger" value="APPLY" required /> : <input type="submit" className="btn btn-primary" value="APPLY" disabled />
+                            }
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     );

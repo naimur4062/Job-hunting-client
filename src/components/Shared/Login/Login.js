@@ -1,16 +1,15 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import loadingImg from '../../../images/loading.png';
+import { UserContext } from '../../../App';
 import { Button } from '@material-ui/core';
 import { Card, Form } from 'react-bootstrap';
-import { useState } from 'react';
+import firebaseConfig from './firebase.config';
 import firebase from "firebase/app";
 import "firebase/auth";
-import firebaseConfig from './firebase.config';
-import { useHistory, useLocation } from 'react-router-dom';
-import './Login.css';
-import { UserContext } from '../../../App';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import loadingImg from '../../../images/loading.png';
+import './Login.scss';
 
 const Login = () => {
     useEffect(() => {
@@ -96,7 +95,6 @@ const Login = () => {
 
     const updateUserName = name => {
         const user = firebase.auth().currentUser;
-
         user.updateProfile({
             displayName: name,
         }).then(function () {
@@ -111,50 +109,48 @@ const Login = () => {
     };
 
     return (
-        <div style={{ height: '100vh' }}>
-            <div data-aos="zoom-in" className="col-md-4 m-auto login">
-                <Card className="card">
-                    <Card.Body>
-                        {newUser && <Card.Title>Create An Account</Card.Title>}
-                        {!newUser && <Card.Title>Login</Card.Title>}
-                        <Form onSubmit={handleSubmit} className="mt-5">
-                            {newUser && <Form.Group controlId="formBasicName">
-                                <Form.Control type="name" onBlur={handleBlur} name="name" className="formControl" placeholder="Your Name" required />
-                            </Form.Group>}
-                            <Form.Group controlId="formBasicEmail">
-                                <Form.Control type="email" onBlur={handleBlur} name="email" className="formControl" placeholder="username or email" required />
-                            </Form.Group>
-                            <Form.Group className="mt-2" controlId="formBasicPassword">
-                                <Form.Control type="password" onBlur={handleBlur} name="password" className="formControl" placeholder="password" required />
-                            </Form.Group>
-                            {newUser && <Form.Group className="mt-2" controlId="formBasicPassword">
-                                <Form.Control type="password" onBlur={handleBlur} name="password" className="formControl" placeholder="Conform Password" required />
-                            </Form.Group>}
-                            <>
-                                {newUser ? <Button className="mt-5 rounded-0" type="submit">
-                                    {loading === true ? <img src={loadingImg} alt="" /> : <p>Create an Account</p>}
+        <div data-aos="zoom-in" className="col-md-4 m-auto login">
+            <Card className="card">
+                <Card.Body>
+                    {newUser && <Card.Title>Create An Account</Card.Title>}
+                    {!newUser && <Card.Title>Login</Card.Title>}
+                    <Form onSubmit={handleSubmit} className="mt-5">
+                        {newUser && <Form.Group controlId="formBasicName">
+                            <Form.Control type="name" onBlur={handleBlur} name="name" className="formControl" placeholder="Your Name" required />
+                        </Form.Group>}
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Control type="email" onBlur={handleBlur} name="email" className="formControl" placeholder="username or email" required />
+                        </Form.Group>
+                        <Form.Group className="mt-2" controlId="formBasicPassword">
+                            <Form.Control type="password" onBlur={handleBlur} name="password" className="formControl" placeholder="password" required />
+                        </Form.Group>
+                        {newUser && <Form.Group className="mt-2" controlId="formBasicPassword">
+                            <Form.Control type="password" onBlur={handleBlur} name="password" className="formControl" placeholder="Conform Password" required />
+                        </Form.Group>}
+                        <>
+                            {newUser ? <Button className="mt-5 rounded-0" type="submit">
+                                {loading === true ? <img src={loadingImg} alt="" /> : <p>Create an Account</p>}
+                            </Button>
+                                :
+                                <Button className="mt-5 rounded-0" type="submit">
+                                    {loading === true ? <img src={loadingImg} alt="" /> : <p>Login</p>}
                                 </Button>
-                                    :
-                                    <Button className="mt-5 rounded-0" type="submit">
-                                        {loading === true ? <img src={loadingImg} alt="" /> : <p>Login</p>}
-                                    </Button>
-                                }
-                            </>
-                            <Form.Text className="text-center mt-3" style={{ fontSize: '17px' }}>
-                                <Form.Group>
-                                    <Form.Check
-                                        onChange={() => setNewUser(!newUser)}
-                                        label="New User Sign Up"
-                                        feedback="You must agree before submitting."
-                                    />
-                                </Form.Group>
-                            </Form.Text>
-                        </Form>
-                    </Card.Body>
-                </Card>
-                <div className="mt-3">
-                    <p style={{ color: 'red' }}>{user.error}</p>
-                </div>
+                            }
+                        </>
+                        <Form.Text className="text-center mt-3" style={{ fontSize: '17px' }}>
+                            <Form.Group>
+                                <Form.Check
+                                    onChange={() => setNewUser(!newUser)}
+                                    label="New User Sign Up"
+                                    feedback="You must agree before submitting."
+                                />
+                            </Form.Group>
+                        </Form.Text>
+                    </Form>
+                </Card.Body>
+            </Card>
+            <div className="mt-3">
+                <p style={{ color: 'red' }}>{user.error}</p>
             </div>
         </div>
     );

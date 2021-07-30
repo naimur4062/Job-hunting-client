@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import './NavBar.css';
 import Logo from '../../../images/logo.png';
 import { UserContext } from '../../../App';
 import { Link } from 'react-router-dom';
+import './NavBar.scss';
 
 const NavBar = () => {
     const [signedInUser, setSignedInUser] = useContext(UserContext);

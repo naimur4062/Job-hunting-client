@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-import './ViewJobs.css';
+import './ViewJobs.scss';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -24,7 +24,7 @@ const ViewJobs = () => {
     };
 
     return (
-        <div style={{ minHeight: '80vh' }} className="container-fluid" >
+        <div className="container-fluid" >
             {
                 jobs.length ? <>
                     <h1 data-aos="fade-down" style={{ color: '#ccd6f6' }} className="text-center">All Jobs List</h1>

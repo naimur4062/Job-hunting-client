@@ -1,0 +1,25 @@
+@import "../../Style/TextColor.scss";
+
+.login .card {
+  width: 100%;
+  padding: 4%;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  button {
+    width: 100%;
+    background-color: $buttonBackgroundColor;
+    color: $whiteColor;
+  }
+  p {
+    position: relative;
+    top: 8px;
+  }
+  img {
+    width: 40px;
+  }
+}
+
+.formControl {
+  border: none;
+  border-bottom: 1px solid $grayColor;
+}

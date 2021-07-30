@@ -17,13 +17,14 @@ import NavBar from "./components/Home/NavBar/NavBar";
 import NotFound from "./components/NotFound/NotFound";
 import Login from "./components/Shared/Login/Login";
 import PrivateRoute from "./components/Shared/PrivateRoute/PrivateRoute";
+import './App.scss';
 
 export const UserContext = createContext();
 
 function App() {
   const [signedInUser, setSignedInUser] = useState({});
   return (
-    <div style={{ backgroundColor: '#00101a' }}>
+    <div className="App">
       <UserContext.Provider value={[signedInUser, setSignedInUser]}>
         <Router>
           <NavBar />
@@ -43,9 +44,9 @@ function App() {
             <PrivateRoute path="/update/:id">
               <CreateUpdateJob />
             </PrivateRoute>
-            <PrivateRoute path="/jobs">
+            <Route path="/jobs">
               <Jobs />
-            </PrivateRoute>
+            </Route>
             <PrivateRoute path="/job/:id">
               <Apply />
             </PrivateRoute>
@@ -55,9 +56,9 @@ function App() {
             <PrivateRoute path="/viewJobs">
               <ViewJobs />
             </PrivateRoute>
-            <Route path="/manageJobs">
+            <PrivateRoute path="/manageJobs">
               <ManageJobs />
-            </Route>
+            </PrivateRoute>
             <PrivateRoute path="/yourJobs">
               <YourJobs />
             </PrivateRoute>

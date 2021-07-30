@@ -1,0 +1,46 @@
+@import "../../Style/TextColor.scss";
+
+.navLink,
+#basic-nav-dropdown,
+.dropMenu span {
+  color: $whiteSmokeColor;
+  font-weight: 700;
+  padding: 8px;
+}
+
+.dropMenu span {
+  color: #00101a;
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.dropMenu a:hover span {
+  color: $blueColor;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+#basic-nav-dropdown {
+  margin-top: -8px;
+}
+
+#toggle {
+  background-color: $whiteSmokeColor;
+  border: 2px solid $cardLinkColor;
+}
+
+#login-btn {
+  background-color: $buttonBackgroundColor;
+  padding: 5px;
+  color: $whiteColor;
+  width: 100px;
+  font-weight: 500;
+  margin-top: -15px;
+}
+
+.user-name h5 {
+  margin-top: -1px;
+}

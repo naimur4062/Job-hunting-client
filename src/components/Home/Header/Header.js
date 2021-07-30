@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import Button from '@material-ui/core/Button';
-import './Header.css';
 import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import './Header.scss';
 
 const Header = () => {
     useEffect(() => {

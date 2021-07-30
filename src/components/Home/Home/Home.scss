@@ -1,0 +1,12 @@
+@import "../../Style/TextColor.scss";
+
+.footer {
+  margin-top: 12%;
+  padding: 10px;
+  p {
+    color: $grayColor;
+  }
+  a {
+    color: #b39f67;
+  }
+}

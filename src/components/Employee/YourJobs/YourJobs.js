@@ -21,7 +21,7 @@ const YourJobs = () => {
             .then(data => setYourJobs(data.reverse()))
     }, [])
     return (
-        <div style={{ minHeight: '80vh' }} className="container">
+        <div className="container">
             {loading.length ? <>
                 <div className="mb-5 text-center">
                     <h1 style={{ color: '#ccd6f6' }}>Dear, {signedInUser.displayName}</h1>

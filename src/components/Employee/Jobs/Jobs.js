@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import Job from '../Job/Job';
+import '../../Style/TextColor.scss';
 
 const Jobs = () => {
     const [jobs, setJobs] = useState([]);
@@ -13,7 +14,7 @@ const Jobs = () => {
     }, [jobs])
 
     return (
-        <div style={{ minHeight: '80vh' }} className="row container-fluid">
+        <div className="row container-fluid">
             {jobs.length ? <>
                 <h1 style={{ color: '#ccd6f6' }} className="text-center mt-2 mb-5">Available Jobs</h1>
                 {

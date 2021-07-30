@@ -29,7 +29,7 @@ const MakeAdmin = () => {
             })
     };
     return (
-        <div style={{ minHeight: '80vh' }} data-aos="zoom-in" className="container">
+        <div data-aos="zoom-in" className="container">
             <h3 style={{ color: '#ccd6f6' }} className="mb-5 text-center">Add Admin</h3>
             <div className="mb-3 p-4" style={{ background: 'lightblue', borderRadius: '8px' }}>
                 <form onSubmit={handleSubmit(onSubmit)}>
